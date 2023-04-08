@@ -20,7 +20,7 @@ export default function App() {
 
   const fetchPokelist = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}?limit=251`)
+      const response = await axios.get(`${BASE_URL}?limit=809`)
       setPokelist(response.data.results)
     } catch (error) {
       console.log("Erro ao buscar lista de pokemons");
@@ -39,14 +39,12 @@ export default function App() {
     }
   };
 
-
   const removeFromPokedex = (pokemonToRemove) => {
       const newPokedex = pokedex.filter(
       (pokemonInPokedex) => pokemonInPokedex.name !== pokemonToRemove.name
     );
     setPokedex(newPokedex);
   };
-
 
   const context = {
     pokedex,
@@ -64,14 +62,12 @@ export default function App() {
     removeFromPokedex,
   }
 
-
   useEffect(() => {
     if (pokedex.length > 0) {
       const pokedexString = JSON.stringify(pokedex)
       localStorage.setItem("pokedex", pokedexString)
     }
   }, [pokedex])
-
 
   useEffect(() => {
     const pokedexGet = localStorage.getItem("pokedex")
@@ -80,7 +76,6 @@ export default function App() {
       setPokedex(pokedexArray)
     }
   }, [])
-
 
   return (
     <ChakraProvider resetCSS >

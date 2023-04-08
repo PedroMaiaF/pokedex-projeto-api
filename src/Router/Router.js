@@ -4,7 +4,6 @@ import PokemonDetailPage from "../Pages/PokemonDetailPage/PokemonDetailPage"
 import PokemonListPage from "../Pages/PokemonsListPage/PokemonListPage"
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage"
 
-
 const Router = () => {
     return (
         <BrowserRouter>
