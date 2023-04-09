@@ -20,7 +20,7 @@ export default function App() {
 
   const fetchPokelist = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}?limit=809`)
+      const response = await axios.get(`${BASE_URL}?limit=251`)
       setPokelist(response.data.results)
     } catch (error) {
       console.log("Erro ao buscar lista de pokemons");
